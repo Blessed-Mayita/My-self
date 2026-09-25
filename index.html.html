@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mayita Blessed | Rwanda Coding Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c1:#ffe6ee;--c2:#e6dcff;--c3:#d3e6ff;--fg:#2b1c47;--muted:#5f4f83;--glass:rgba(255,255,255,.55);--gb:rgba(255,255,255,.85);
+  --acc:#c2439a;--star:rgba(194,67,154,.55);--moon:#ffd97a;--glow:#ffb86b;--sh:0 12px 40px rgba(120,80,180,.16);
+  --tg:linear-gradient(100deg,#8b3fd1,#e0559a,#e58a2f);--btn:linear-gradient(100deg,#e0559a,#8b3fd1);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--c1:#0c0a24;--c2:#26134a;--c3:#4a2350;--fg:#f7f1ff;--muted:#cbbfe8;--glass:rgba(255,255,255,.07);--gb:rgba(255,255,255,.17);
+  --acc:#ffb3d9;--star:#ffffff;--moon:#fff2cf;--glow:#ffd9a0;--sh:0 12px 40px rgba(0,0,0,.35);
+  --tg:linear-gradient(100deg,#ffffff,#ffc4e1,#ffd9a0);--btn:linear-gradient(100deg,#ff9ecb,#b48bff)}
+}
+:root[data-theme="dark"]{--c1:#0c0a24;--c2:#26134a;--c3:#4a2350;--fg:#f7f1ff;--muted:#cbbfe8;--glass:rgba(255,255,255,.07);--gb:rgba(255,255,255,.17);
+  --acc:#ffb3d9;--star:#ffffff;--moon:#fff2cf;--glow:#ffd9a0;--sh:0 12px 40px rgba(0,0,0,.35);
+  --tg:linear-gradient(100deg,#ffffff,#ffc4e1,#ffd9a0);--btn:linear-gradient(100deg,#ff9ecb,#b48bff)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--fg);font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden;background:var(--c1)}
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,var(--c1),var(--c2) 58%,var(--c3))}
+.sky::before,.sky::after{content:"";position:absolute;inset:0;animation:tw 4s ease-in-out infinite alternate;
+  background-image:radial-gradient(1.5px 1.5px at 20px 30px,var(--star),transparent),radial-gradient(1px 1px at 90px 120px,var(--star),transparent),radial-gradient(2px 2px at 160px 60px,var(--star),transparent),radial-gradient(1px 1px at 230px 180px,var(--star),transparent),radial-gradient(1.5px 1.5px at 60px 220px,var(--star),transparent);background-size:260px 260px}
+.sky::after{background-size:340px 340px;background-position:80px 40px;animation-delay:-2s;opacity:.7}
+@keyframes tw{from{opacity:.25}to{opacity:1}}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px}
+.serif,h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:13px;font-weight:400}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:22px}
+.top nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.top a{color:var(--fg);text-decoration:none;opacity:.7;transition:.25s}
+.top a:hover{opacity:1;color:var(--acc)}
+.hero{text-align:center;padding:30px 0 80px}
+.moon{width:min(150px,38vw);margin:0 auto 22px;display:block;animation:bob 7s ease-in-out infinite;filter:drop-shadow(0 0 22px var(--glow))}
+@keyframes bob{50%{transform:translateY(-10px)}}
+h1{font-weight:400;font-style:italic;font-size:clamp(3.4rem,16vw,7.4rem);line-height:.92;letter-spacing:-.02em;margin:0}
+h1 span{display:block;padding:0 .08em .06em;background:var(--tg);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;filter:blur(10px);transform:translateY(20px);animation:in 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span+span{animation-delay:.3s}
+@keyframes in{to{opacity:1;filter:none;transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hi{margin:22px auto 0;max-width:30ch;color:var(--muted);font-size:1.15rem;opacity:0;animation:fade 1s .9s forwards}
+.pill{display:inline-block;margin-top:22px;padding:10px 24px;border-radius:999px;background:var(--glass);border:1px solid var(--gb);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:14px;font-weight:400;opacity:0;animation:fade 1s 1.1s forwards}
+.pill b{font-weight:500;color:var(--acc)}
+section{padding:46px 0}
+.lab{font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--acc);margin-bottom:18px;text-align:center}
+.glass{background:var(--glass);border:1px solid var(--gb);border-radius:28px;padding:30px;box-shadow:var(--sh);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.split{display:grid;gap:26px;align-items:center}
+@media(min-width:680px){.split{grid-template-columns:1fr 1.5fr;gap:40px}}
+.art{width:100%;max-width:190px;margin:0 auto;display:block}
+.glass p{margin:0;font-size:1.12rem}
+.word{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(3.4rem,13vw,5.6rem);line-height:1;margin:0;background:var(--tg);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em .05em}
+.type{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+.mean{text-align:center}
+.mean h3{margin:18px 0 6px;font-weight:400;font-style:italic;font-size:2.2rem;color:var(--acc)}
+.mean p{color:var(--muted);max-width:34ch;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chips span{padding:11px 24px;border-radius:999px;font-weight:400;background:var(--glass);border:1px solid var(--gb);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.3s}
+.chips span:hover{transform:translateY(-3px);border-color:var(--acc);color:var(--acc)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cards .glass{padding:26px 22px;text-align:center;transition:.3s}
+.cards .glass:hover{transform:translateY(-5px);border-color:var(--acc)}
+.ic{width:60px;height:60px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gb);background:var(--glass);box-shadow:0 0 24px var(--glow)}
+.ic svg{width:30px;height:30px}
+.cards h3{margin:0 0 6px;font-weight:500;font-size:1.6rem}
+.cards p{font-size:.98rem;color:var(--muted);line-height:1.55}
+.num{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:2.8rem;line-height:1;margin-bottom:8px;background:var(--tg);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .1em}
+.tw{animation:tw2 3s ease-in-out infinite alternate}
+@keyframes tw2{from{opacity:.3}to{opacity:1}}
+.glow{animation:pulse 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.14);opacity:.7}}
+.spin{transform-origin:100px 100px;animation:spin 50s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.quote{text-align:center;padding:74px 0}
+.quote p{margin:0 auto;max-width:18ch;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(2.2rem,8vw,3.8rem);line-height:1.1}
+.quote svg{width:22px;margin:0 auto 18px;display:block}
+.contact{text-align:center}
+.contact h2{margin:0 0 6px;font-weight:400;font-style:italic;font-size:clamp(2.6rem,10vw,4rem);line-height:1.05}
+.contact>p{margin:0 auto 26px;max-width:32ch;color:var(--muted);font-size:1.1rem}
+.row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.ig{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border-radius:999px;background:var(--btn);color:#fff;text-decoration:none;font-weight:500;box-shadow:0 10px 30px rgba(200,80,170,.35);transition:.25s;max-width:100%}
+.ig:hover{transform:translateY(-3px)}
+.ig small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;font-weight:400}
+.ig span{overflow-wrap:anywhere}
+.or{color:var(--muted)}.or b{color:var(--fg);font-weight:500}
+footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:26px 0 46px}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.js .rv{opacity:1;transform:none;transition:none}h1 span,.hi,.pill{opacity:1;filter:none;transform:none}}
+</style>
+</head>
+<body>
+<div class="sky"></div>
+<div class="wrap">
+  <header class="top"><span class="logo">M. Blessed</span>
+    <nav><a href="#meaning">name</a><a href="#about">about</a><a href="#faith">faith</a><a href="#contact">contact</a></nav></header>
+
+  <div class="hero">
+    <svg class="moon" viewBox="0 0 120 120" role="img" aria-label="Glowing crescent moon">
+      <path d="M74 29a34 34 0 1 0 17 55a29 29 0 0 1-17-55Z" fill="var(--moon)"/>
+      <g fill="var(--acc)"><path class="tw" d="M98 24l2.4 6.2 6.2 2.4-6.2 2.4-2.4 6.2-2.4-6.2-6.2-2.4 6.2-2.4z"/><path class="tw" style="animation-delay:-1.4s" d="M20 84l1.8 4.6 4.6 1.8-4.6 1.8-1.8 4.6-1.8-4.6-4.6-1.8 4.6-1.8z"/></g>
+    </svg>
+    <h1><span>Mayita</span><span>Blessed</span></h1>
+    <p class="hi">hiii, so glad you're here! grab a snack and stay a while.</p>
+    <div class="pill">Student at <b>Rwanda Coding Academy</b></div>
+  </div>
+
+  <section id="meaning" class="rv">
+    <div class="lab">my name</div>
+    <div class="glass mean">
+      <p class="word">Mayita</p><p class="type">A Spanish name, straight from Spain</p>
+      <h3>Beloved</h3>
+      <p>It means "beloved," aka someone who is so loved. Lowkey iconic, ngl.</p>
+    </div>
+  </section>
+
+  <section id="about" class="rv">
+    <div class="lab">about me</div>
+    <div class="glass split">
+      <svg class="art" viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="none" stroke="var(--acc)" stroke-width="1.4" stroke-linecap="round" opacity=".6"><path d="M30 150L70 110L105 125L140 70L175 40M105 125L120 172"/></g>
+        <g fill="var(--acc)"><circle class="tw" cx="30" cy="150" r="4"/><circle class="tw" style="animation-delay:-.6s" cx="70" cy="110" r="5"/><circle class="tw" style="animation-delay:-1.2s" cx="105" cy="125" r="4"/><circle class="tw" style="animation-delay:-1.8s" cx="140" cy="70" r="6"/><circle class="tw" style="animation-delay:-2.4s" cx="175" cy="40" r="4"/><circle class="tw" style="animation-delay:-.9s" cx="120" cy="172" r="3.5"/></g>
+      </svg>
+      <p>Heyyy, I'm Mayita! I'm at Rwanda Coding Academy, and I'm always asking a million questions, trying random new stuff and lowkey trying to be better than yesterday me. Big on good vibes, hard work and being curious. Can't wait to see where this goes!</p>
+    </div>
+  </section>
+
+  <section id="faith" class="rv">
+    <div class="lab">my faith</div>
+    <div class="glass split">
+      <svg class="art" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><radialGradient id="gl"><stop offset="0" stop-color="var(--acc)" stop-opacity=".45"/><stop offset="1" stop-color="var(--acc)" stop-opacity="0"/></radialGradient></defs>
+        <circle class="glow" cx="100" cy="100" r="82" fill="url(#gl)"/>
+        <circle class="spin" cx="100" cy="100" r="74" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-dasharray="2 9" stroke-linecap="round" opacity=".8"/>
+        <rect x="96" y="68" width="8" height="64" rx="4" fill="var(--acc)"/>
+        <rect x="76" y="88" width="48" height="8" rx="4" fill="var(--acc)"/>
+      </svg>
+      <p>I pray to God too, and it honestly keeps me grounded. My faith keeps me calm, grateful and hopeful, and it reminds me to be kind to everyone, always.</p>
+    </div>
+  </section>
+
+  <section class="rv">
+    <div class="lab">what I'm good at</div>
+    <div class="chips"><span>Communication</span><span>Teamwork</span><span>Creativity</span><span>Some basketball</span></div>
+  </section>
+
+  <section class="rv">
+    <div class="lab">inspo</div>
+    <div class="cards">
+      <div class="glass"><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-linecap="round"><path d="M6 28h28M12 28a8 8 0 0 1 16 0M20 8v5M8 15l3 3M32 15l-3 3"/></svg></div><h3>Fresh starts</h3><p>New day, new me. I love a good reset.</p></div>
+      <div class="glass"><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10a3 3 0 0 1 3 3v19a3 3 0 0 0-3-3H7ZM33 9H23a3 3 0 0 0-3 3v19a3 3 0 0 1 3-3h10Z"/></svg></div><h3>Good stories</h3><p>Books that make me daydream big.</p></div>
+      <div class="glass"><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 13L7 20l7 7M26 13l7 7-7 7M22 9l-4 22"/></svg></div><h3>Making stuff</h3><p>Turning random ideas into code that actually works. Best feeling ever.</p></div>
+    </div>
+  </section>
+
+  <section class="rv">
+    <div class="lab">goals</div>
+    <div class="cards">
+      <div class="glass"><div class="num">01</div><h3>School</h3><p>Slay every term and keep on learning.</p></div>
+      <div class="glass"><div class="num">02</div><h3>Level up</h3><p>Get so good at coding by building tons of projects.</p></div>
+      <div class="glass"><div class="num">03</div><h3>Good vibes</h3><p>Hype people up and make someone's day.</p></div>
+    </div>
+  </section>
+
+  <div class="quote rv"><svg viewBox="0 0 24 24" fill="var(--acc)" aria-hidden="true"><path class="tw" d="M12 1l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></svg><p>Small steps every day = big dreams.</p></div>
+
+  <section id="contact" class="contact rv">
+    <h2>Let's talk</h2>
+    <p>Wanna study together, build something, or just say hi? My DMs are always open.</p>
+    <div class="row">
+      <a class="ig" href="https://instagram.com/_p.u.e.ll.a_dei_" target="_blank" rel="noopener"><small>Instagram</small><span>@_p.u.e.ll.a_dei_</span></a>
+      <span class="or">or on <b>Slack</b></span>
+    </div>
+  </section>
+
+  <footer><span>Mayita Blessed</span><span>Rwanda Coding Academy</span></footer>
+</div>
+<script>
+document.documentElement.classList.add("js");
+var els=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add("in")})}
+</script>
+</body>
+</html>
